@@ -1,0 +1,13 @@
+server:
+  port: 8890
+
+spring:
+  application:
+    name: gateway #服务网关名
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka
+zuul:
+  routes:
+    provider:   /p/**             #服务提供者的name 的别名 在浏览器访问方式http://localhost:8890/p/findall

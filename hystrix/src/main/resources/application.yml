@@ -1,0 +1,26 @@
+server:
+  port: 8893
+spring:
+  application:
+    name: hystrix
+
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    service-url:
+      defaultZone:  http://localhost:8001/eureka
+
+
+  instance:
+    prefer-ip-address: true  #绑定实例
+
+feign:
+  hystrix:
+    enabled: true   #开启容错机制
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'hystrix.stream'
+#http://localhost:8893/actuator/hystrix.stream  健康检查访问的地址

@@ -1,0 +1,12 @@
+server:
+  port: 8889
+spring:
+  application:
+    name: consumer #服务消费者
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka
+  instance:
+    prefer-ip-address: true
+

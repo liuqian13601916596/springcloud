@@ -1,0 +1,26 @@
+
+  profiles:
+    active: dev   #和本地配置的yml文件对应  nativeConfig-dev,这样才能找到
+#  cloud:
+#    config:
+#      uri:  http://localhost:8894/                                                  #从配置中心找这是配置中心的端口
+#      fail-fast: true  #设置客户端优先判断configserver是否配置正常
+  server:
+    port: 8895
+  spring:
+    application:
+      name:  configclient
+
+    cloud:
+      config:
+        discovery:
+          enabled: true
+          service-id: config-server
+          profile: dev
+        uri:  http://localhost:8899
+        name: config-client
+  eureka:
+    client:
+      service-url:
+        defaultZone: http://localhost:8001/eureka
+

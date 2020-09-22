@@ -1,0 +1,12 @@
+server:
+  port: 8001
+  #注册中心
+eureka:
+  client:
+    register-with-eureka: false    #不注册自己  #是否通过其他的注册
+    #默认的注册中心的路径
+    fetch-registry: false  #是否从注册中心获取信息
+    service-url:
+      defaultZone: http://localhost:8001/eureka/  #注意要有空格 启动后直接访问http://localhost:8001/
+    healthcheck:
+      enabled: true  #开启健康检查

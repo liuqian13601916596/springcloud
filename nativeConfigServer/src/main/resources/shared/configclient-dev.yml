@@ -1,0 +1,4 @@
+project:
+  name: hahha
+
+  #声明版本  #这个yml文件命名用nativeConfig-dev  横线和读取配置文件关连
